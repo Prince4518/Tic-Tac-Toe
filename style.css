@@ -1,0 +1,84 @@
+/* Basic page style */
+body {
+  text-align: center;
+  font-family: Arial;
+  background: #f0f0f0;
+  padding: 20px;
+}
+
+/* Game heading */
+h1 {
+  color: #333;
+}
+
+/* Game board layout: 3x3 grid */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 5px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Each cell */
+.cell {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border: 2px solid #333;
+  font-size: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* X - blue with animation */
+.X {
+  color: blue;
+  animation: zoom 0.3s;
+}
+
+/* O - red with animation */
+.O {
+  color: rgb(255, 0, 0);
+  animation: zoom 0.3s;
+}
+
+/* Win cells flash green */
+.win {
+  background-color: rgb(8, 244, 8) !important;
+  animation: blink 0.5s alternate 4;
+}
+
+/* Draw style (yellow) */
+.draw {
+  background-color: rgb(246, 246, 8) !important;
+}
+
+/* Button style */
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+/* Zoom-in effect */
+@keyframes zoom {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Blink green on win */
+@keyframes blink {
+  from { background-color: rgb(10, 244, 10); }
+  to { background-color: rgb(228, 160, 160); }
+}
+
